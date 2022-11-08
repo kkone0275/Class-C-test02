@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #news {
+            width: 280px;
+            height: 460px;
+            border: 1px solid #999999;
+            float: left;
+        }
+
+        #news h1 {
+            font-size: 16px;
+            font-weight: bolder;
+        }
+
+        #news table {
+            width: 260px;
+            margin: auto;
+            border-collapse: none;
+            /* border-spacing 屬性基本語法的參數共有兩個，第一個是控制表格欄位水平間的距離，第二個則是控制表格欄位垂直間的距離，單位可以使用 px、cm 這些標準的 css 長度單位。 */
+            border-spacing: 0;
+        }
+
+        #news table th {
+            background: #3399FF;
+            font-size: 14px;
+            color: #FFFFFF;
+        }
+
+        #news table td {
+            font-size: 12px;
+            line-height: 2;
+        }
+
+        #yellow {
+            background: #ffc
+        }
+
+        #gray {
+            background: #DDDDDD;
+        }
+
+        #center {
+            text-align: center;
+        }
+
+        #photo {
+            width: 590px;
+            height: 460px;
+            border: 1px solid #999;
+            float: right;
+            background-color: #333333;
+            font-size: 14px;
+            color: #ff0;
+            text-align: center;
+        }
+
+        #photo table {
+            width: 570px;
+            margin: auto;
+            border-collapse: none;
+            border-spacing: 0;
+        }
+
+        #photo #big {
+            width: 570px;
+            height: 340px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="news">
+        <h1>最新消息</h1>
+        <!-- <table>, <tr> 和 <td> 是 HTML 表格中最常見到也一定會用到的三個標籤，<table> 用來包著整個表格的結構和內容，<tr> (table row) 用來定義表格有幾個橫列 (row)，<tr> 裡面有 <td> (table data) 用來定義表格有幾個直行 (cloumn)，至於 <td> 裡面就是放實際單元格的資料。 -->
+        <!-- <th> (table header) 用來表示表格欄位的標題，<th> 可以用來替代 <td> 使用，用來在語意上更明確的聲明這一格是一個標題。 -->
+        <table>
+            <tr>
+                <th>主題</th>
+                <th>發布日期</th>
+            </tr>
+            <tr id="yellow">
+                <td><img src="../images/0201.png">公告全國技能競賽相關事宜</td>
+                <td id="center">111/10/26</td>
+            </tr>
+            <tr id="gray">
+                <td><img src="../images/0201.png">公告即測即評及發證相關事宜</td>
+                <td id="center">111/10/26</td>
+            </tr>
+            <tr id="yellow">
+                <td><img src="../images/0201.png">公告網頁設計修題相關事宜</td>
+                <td id="center">111/10/26</td>
+            </tr>
+            <tr id="gray">
+                <td><img src="../images/0201.png">公告網路架設應檢相關事宜</td>
+                <td id="center">111/10/26</td>
+            </tr>
+        </table>
+    </div>
+    <div id="photo">
+        <table>
+            <tr>
+                <td colspan="4"><img id="big" src="../images/0202A.png"></td>
+            </tr>
+            <tr>
+                <td>
+                    <!-- 瀏覽器也會額外顯示 title 屬性的訊息而造成重複，解決方法為「將屬性 title 改為 data-title」。 -->
+                    <a><img class="pic" src="../images/0202B.png" data-title="第30屆倫敦奧運"></a>
+                </td>
+                <td>
+                    <a><img class="pic" src="../images/0203B.png" data-title="許淑淨奪舉重銀牌"></a>
+                </td>
+                <td>
+                    <a><img class="pic" src="../images/0204B.png" data-title="第26屆深圳世大運"></a>
+                </td>
+                <td>
+                    <a><img class="pic" src="../images/0205B.png" data-title="第27屆喀山世大運"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>第30屆倫敦奧運</td>
+                <td>許淑淨奪舉重銀牌</td>
+                <td>第26屆深圳世大運</td>
+                <td>第27屆喀山世大運</td>
+            </tr>
+        </table>
+    </div>
+    <script src="../others/jquery-2.1.4.min.js"></script>
+    <script>
+        $('.pic').each(function (i) {
+            $(this).on('click', function () {
+                $('#big').attr('src', `../images/020${i + 2}A.png`)
+            })
+        })
+    </script>
+</body>
+
+</html>
